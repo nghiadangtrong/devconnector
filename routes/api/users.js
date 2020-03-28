@@ -84,7 +84,7 @@ router.post('/login', (req, res) => {
         .then(user => {
             if(!user) {
                 errors.email = 'User not found';
-                return res.status(404).json({email: "User nt found"});
+                return res.status(404).json({email: "User not found"});
             }
 
             // check password
@@ -105,7 +105,7 @@ router.post('/login', (req, res) => {
                     jwt.sign(
                         payload, 
                         keys.secretOrKey, 
-                        {expiresIn: 3600}, 
+                        {expiresIn: 360000}, 
                         (err, token) => {
                             res.json({
                                 success: true,
