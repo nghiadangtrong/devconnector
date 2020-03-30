@@ -123,6 +123,7 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
     }
     //social
     profileFields.social = {};
+    console.log('body', req.body)
     if(req.body.youtube) profileFields.social.youtube = req.body.youtube;
     if(req.body.twitter) profileFields.social.twitter = req.body.twitter;
     if(req.body.facebook) profileFields.social.facebook = req.body.facebook;
